@@ -27,7 +27,7 @@ app.post('/generate', (req, res) => {
   }
 
   // Gera o QR code e envia como resposta
-  QRCode.toDataURL(data, (err, url) => {
+  QRCode.toDataURL(data, {width: 800 }, (err, url) => {
     if (err) {
       return res.send('Erro ao gerar o QR Code.');
     }
